@@ -58,6 +58,8 @@ def my_mean_absolute_error_weighted_genexp(weight=(1.0,0.0,0.0)):
             tf.abs(tf.subtract(y_pred,y_true)) ) )
     return loss
 
+# END OF THE YEAR BLOWOUT SALE EVERYTHING MUST GO
+# new loss function definitions and associated functions
 def _log2(input_tensor):
     """Computes logarithm in base 2.
 

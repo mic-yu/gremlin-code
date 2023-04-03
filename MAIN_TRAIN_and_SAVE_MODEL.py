@@ -35,8 +35,12 @@ from custom_model_elements import my_mean_squared_error_weighted_linear
 from custom_model_elements import my_mean_squared_error_weighted_gaussian
 from custom_model_elements import my_mean_squared_error_weighted_genexp
 from custom_model_elements import my_mean_absolute_error_weighted_genexp
+
+# END OF THE YEAR BLOWOUT SALE EVERYTHING MUST GO
+# add import for other loss functions
 from custom_model_elements import make_FSS_loss
 from custom_model_elements import cross_entropy
+
 # Note: also need to set this function below the line "##### LOSS FUNCTION"
 
 import warnings
@@ -73,7 +77,7 @@ print()
 
 # machine specific configuration
 
-spath = '../conus2_ml/models'  #Imme
+spath = '../conus2_ml/models'  
 verbose_fit = 1
 
 
@@ -258,6 +262,9 @@ if loss in ['my_mean_squared_error_weighted',\
 if not hasweightarg:
     if loss == 'my_mean_squared_error_noweight': loss = my_mean_squared_error_noweight
     if loss == 'my_mean_squared_error_weighted1': loss = my_mean_squared_error_weighted1
+    
+    # END OF THE YEAR BLOWOUT SALE EVERYTHING MUST GO
+    # setting loss to new versions
     if loss == 'make_FSS_loss': loss = make_FSS_loss(mask_size=3)
     if loss == 'cross_entropy': 
         true_mask = np.full((ny,nx), True)
