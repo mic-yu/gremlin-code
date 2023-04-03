@@ -1,0 +1,9 @@
+NN_string='SEQ'
+nepochs=100
+batch_size=18
+n_filters_for_first_layer=32
+double_filters=False
+loss='my_mean_squared_error_weighted_genexp'
+loss_weight=(1.0, 5.0, 4.0)
+my_file_prefix='K12_WTD_ALL_3x3_T'
+data_suffix = 'rescaleC09'

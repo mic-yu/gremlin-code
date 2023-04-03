@@ -1,0 +1,18 @@
+2023-04-03 03:38:48.053252: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-03 03:38:55.157078: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/home/mcy/conus2_ml/train3fss.py", line 485, in <module>
+    x = Reshape((ny,nx))(x)
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/layers/reshaping/reshape.py", line 118, in _fix_unknown_dimension
+    raise ValueError(msg)
+ValueError: Exception encountered when calling layer "reshape" (type Reshape).
+
+total size of new array must be unchanged, input_shape = [256, 256, 32], output_shape = [256, 256]
+
+Call arguments received by layer "reshape" (type Reshape):
+  • inputs=tf.Tensor(shape=(None, 256, 256, 32), dtype=float32)
+slurmstepd: error: acct_gather_profile/influxdb _send_data: curl_easy_perform failed to send data (discarded). Reason: Couldn't resolve host name

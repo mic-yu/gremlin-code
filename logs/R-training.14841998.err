@@ -1,0 +1,15 @@
+2023-04-03 03:49:30.776960: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-03 03:49:39.805885: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/home/mcy/conus2_ml/train3fss.py", line 487, in <module>
+    model = Model(inputs=input_layer, outputs=x, include_top=False)
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/tensorflow/python/trackable/base.py", line 205, in _method_wrapper
+    result = method(self, *args, **kwargs)
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/functional.py", line 150, in __init__
+    generic_utils.validate_kwargs(kwargs, {})
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/utils/generic_utils.py", line 515, in validate_kwargs
+    raise TypeError(error_message, kwarg)
+TypeError: ('Keyword argument not understood:', 'include_top')
+slurmstepd: error: acct_gather_profile/influxdb _send_data: curl_easy_perform failed to send data (discarded). Reason: Couldn't resolve host name

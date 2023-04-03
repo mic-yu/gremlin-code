@@ -1,0 +1,42 @@
+2023-04-03 02:36:15.848782: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-04-03 02:36:23.036181: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/home/mcy/conus2_ml/train_XE.py", line 508, in <module>
+    history = model.fit(Xdata_train,Ydata_train,epochs=nepochs,\
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/tensorflow/python/eager/execute.py", line 52, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+Detected at node 'loss/mul' defined at (most recent call last):
+    File "/home/mcy/conus2_ml/train_XE.py", line 508, in <module>
+      history = model.fit(Xdata_train,Ydata_train,epochs=nepochs,\
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1650, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1249, in train_function
+      return step_function(self, iterator)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1233, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1222, in run_step
+      outputs = model.train_step(data)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1024, in train_step
+      loss = self.compute_loss(x, y, y_pred, sample_weight)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/training.py", line 1082, in compute_loss
+      return self.compiled_loss(
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/engine/compile_utils.py", line 265, in __call__
+      loss_value = loss_obj(y_t, y_p, sample_weight=sw)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/losses.py", line 152, in __call__
+      losses = call_fn(y_true, y_pred)
+    File "/home/mcy/mambaforge/envs/tf_gpu/lib/python3.9/site-packages/keras/losses.py", line 284, in call
+      return ag_fn(y_true, y_pred, **self._fn_kwargs)
+    File "/home/mcy/conus2_ml/custom_model_elements.py", line 241, in loss
+      filtered_target_tensor = target_tensor * mask_matrix_4d
+Node: 'loss/mul'
+Incompatible shapes: [18,256,256] vs. [1,256,256,1]
+	 [[{{node loss/mul}}]] [Op:__inference_train_function_2794]
+slurmstepd: error: acct_gather_profile/influxdb _send_data: curl_easy_perform failed to send data (discarded). Reason: Couldn't resolve host name
